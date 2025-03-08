@@ -21,3 +21,21 @@ document.getElementById('btn-add-money').addEventListener('click', function(even
         alert('Wrong Pin Number, Please Try Again');
     }
 })
+/*  Cashout Section*/ 
+document.getElementById('btn-cashout').addEventListener('click', function(event){
+    event.preventDefault();
+    const cashoutAddMoney = document.getElementById('cashout-add-money').value;
+    const cashoutPinNumber = document.getElementById('cashout-pin-number').value;
+
+    if( cashoutPinNumber === '1234'){
+        const balance = document.getElementById('account-balance').innerText;
+        const cashoutAddMoneyNumber = parseFloat(cashoutAddMoney);
+        const cashoutNewBalance = balance - cashoutAddMoneyNumber;
+        document.getElementById('account-balance').innerText = cashoutNewBalance;
+        
+
+    }
+    else{
+        alert('Wrong Pin Numbe,Try Again');
+    }
+})
